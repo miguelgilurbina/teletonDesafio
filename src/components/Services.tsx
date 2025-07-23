@@ -49,7 +49,7 @@ export default function Services({ data, className = "" }: ServicesProps) {
   return (
     <section
       id="services"
-      className={`section-padding bg-[var(--neutral-light)] ${className}`}
+      className={`section-padding bg-gradient-services ${className}`}
     >
       <div className="container-custom">
         <motion.div

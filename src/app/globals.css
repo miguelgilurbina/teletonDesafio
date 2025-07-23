@@ -45,6 +45,75 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+     /* HERO - Comienza neutral, baja hacia accent suave */
+  .bg-gradient-hero {
+    background: linear-gradient(180deg, 
+      var(--neutral-light) 0%,     /* Top neutral */
+      white 40%,                   /* Medio blanco */
+      #fdf8f3 80%,                 /* Transición cálida */
+      #fdf4ed 100%                 /* Bottom cálido (conecta con About) */
+    );
+  }
+  
+  /* ABOUT - Empieza donde Hero termina, va hacia blanco */
+  .bg-gradient-about {
+    background: linear-gradient(180deg, 
+      #fdf4ed 0%,                  /* Conecta con Hero bottom */
+      white 30%,                   /* Sube a blanco */
+      #f8fafc 70%,                 /* Gris suave */
+      var(--neutral-light) 100%    /* Termina neutral (conecta con Services) */
+    );
+  }
+  
+  /* SERVICES - Empieza neutral, mantiene consistencia */
+  .bg-gradient-services {
+    background: linear-gradient(180deg, 
+      var(--neutral-light) 0%,     /* Conecta con About */
+      #f1f5f9 30%,                 /* Gris claro */
+      white 70%,                   /* Blanco medio */
+      #f8fafc 100%                 /* Termina gris suave (conecta con Process) */
+    );
+  }
+  
+  /* PROCESS - Empieza gris suave, sube a blanco */
+  .bg-gradient-process {
+    background: linear-gradient(180deg, 
+      #f8fafc 0%,                  /* Conecta con Services */
+      white 40%,                   /* Blanco dominante */
+      #fefefe 80%,                 /* Blanco cálido */
+      #fdf8f3 100%                 /* Termina cálido (conecta con Pricing) */
+    );
+  }
+  
+  /* PRICING - Destacado pero conectado */
+  .bg-gradient-pricing {
+    background: linear-gradient(180deg, 
+      #fdf8f3 0%,                  /* Conecta con Process */
+      color-mix(in srgb, var(--primary) 8%, white) 30%,  /* Sutil accent */
+      white 60%,                   /* Blanco central */
+      var(--neutral-light) 100%    /* Termina neutral */
+    );
+  }
+  
+  /* FAQ - Suave y neutral */
+  .bg-gradient-faq {
+    background: linear-gradient(180deg, 
+      var(--neutral-light) 0%,     /* Conecta con Pricing */
+      white 50%,                   /* Blanco medio */
+      #f8fafc 100%                 /* Termina gris suave */
+    );
+  }
+  
+  /* CONTACT - Final cálido y acogedor */
+  .bg-gradient-contact {
+    background: linear-gradient(180deg, 
+      #f8fafc 0%,                  /* Conecta con FAQ */
+      white 30%,                   /* Blanco */
+      #fdf8f3 70%,                 /* Cálido */
+      color-mix(in srgb, var(--accent) 5%, var(--neutral-light)) 100%  /* Final suave */
+    );
+  }
 }
 
 @layer utilities {

@@ -46,10 +46,10 @@ export default function Hero({ data, className = "" }: HeroProps) {
   return (
     <section
       id="hero"
-      className={`relative min-h-screen flex items-center justify-center overflow-hidden ${className}`}
+      className={`bg-gradient-hero relative min-h-screen flex items-center justify-center overflow-hidden ${className}`}
     >
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--neutral-light)] via-white to-[var(--neutral-light)]/50"></div>
+      <div className="absolute inset-0 bg-gradient-primary from-[var(--neutral-light)] via-white to-[var(--neutral-light)]/50"></div>
 
       {/* Decorative Elements */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-[var(--primary)]/10 rounded-full blur-3xl"></div>

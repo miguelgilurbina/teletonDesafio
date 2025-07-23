@@ -32,7 +32,10 @@ export default function Process({ data, className = "" }: ProcessProps) {
   };
 
   return (
-    <section id="process" className={`section-padding bg-white ${className}`}>
+    <section
+      id="process"
+      className={`section-padding bg-gradient-process ${className}`}
+    >
       <div className="container-custom">
         <motion.div
           variants={containerVariants}

@@ -66,7 +66,7 @@ export default function Contact({ data, className = "" }: ContactProps) {
   return (
     <section
       id="contact"
-      className={`section-padding bg-[var(--neutral-light)] ${className}`}
+      className={`section-padding bg-gradient-contact ${className}`}
     >
       <div className="container-custom">
         <motion.div

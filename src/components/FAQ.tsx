@@ -41,7 +41,7 @@ export default function FAQ({ data, className = "" }: FAQProps) {
   };
 
   return (
-    <section className={`section-padding bg-white ${className}`}>
+    <section className={`section-padding bg-gradient-faq ${className}`}>
       <div className="container-custom">
         <motion.div
           variants={containerVariants}

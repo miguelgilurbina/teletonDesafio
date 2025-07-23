@@ -36,8 +36,8 @@ export default function About({ data, className = "" }: AboutProps) {
   };
 
   return (
-    <section className={`section-padding bg-white ${className}`}>
-      <div className="container-custom">
+    <section className={`section-padding bg-gradient-about ${className}`}>
+      <div className="container-custom ">
         <motion.div
           variants={containerVariants}
           initial="hidden"

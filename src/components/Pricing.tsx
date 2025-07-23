@@ -36,7 +36,7 @@ export default function Pricing({ data, className = "" }: PricingProps) {
   return (
     <section
       id="pricing"
-      className={`section-padding bg-[var(--neutral-light)] ${className}`}
+      className={`section-padding bg-gradient-pricing ${className}`}
     >
       <div className="container-custom">
         <motion.div
