@@ -1,0 +1,146 @@
+{
+  "site": {
+    "name": "Tu Web En 7 Días",
+    "tagline": "Páginas Web Profesionales en 7 Días",
+    "description": "Transforma tu presencia digital con páginas web profesionales entregadas en tiempo récord"
+  },
+  "contact": {
+    "email": "contacto@tuweben7dias.com",
+    "phone": "+56 9 1234 5678",
+    "whatsapp": "+56912345678",
+    "social": {
+      "instagram": "https://instagram.com/tuweben7dias",
+      "linkedin": "https://linkedin.com/company/tuweben7dias"
+    }
+  },
+  "hero": {
+    "headline": "Tu Página Web Profesional Lista en 7 Días",
+    "subtitle": "Diseño moderno, responsive y optimizado para convertir visitantes en clientes. Perfecto para profesionales y PyMEs que buscan destacar online.",
+    "cta_primary": "Solicitar Mi Página Web",
+    "cta_secondary": "Ver Ejemplos",
+    "features": [
+      "Entrega garantizada en 7 días hábiles",
+      "Diseño 100% responsive",
+      "SEO básico incluido",
+      "Formulario de contacto funcional"
+    ]
+  },
+  "about": {
+    "title": "¿Por Qué Elegirnos?",
+    "subtitle": "Proceso simple, resultados profesionales",
+    "description": "Especializados en crear páginas web que realmente convierten. Nuestro proceso optimizado garantiza entrega rápida sin comprometer la calidad.",
+    "benefits": [
+      {
+        "title": "Proceso Optimizado",
+        "description": "Metodología probada que garantiza entrega en tiempo récord"
+      },
+      {
+        "title": "Diseño Profesional",
+        "description": "Páginas modernas que reflejan la calidad de tu negocio"
+      },
+      {
+        "title": "Soporte Incluido",
+        "description": "Acompañamiento completo desde el primer día"
+      }
+    ]
+  },
+  "services": {
+    "title": "¿Qué Incluye Tu Página Web?",
+    "subtitle": "Todo lo que necesitas para empezar",
+    "items": [
+      {
+        "title": "Diseño Responsivo",
+        "description": "Perfecta en computador, tablet y móvil",
+        "icon": "Monitor"
+      },
+      {
+        "title": "SEO Optimizado",
+        "description": "Preparada para aparecer en Google",
+        "icon": "Search"
+      },
+      {
+        "title": "Formulario de Contacto",
+        "description": "Recibe consultas directo a tu email",
+        "icon": "Mail"
+      },
+      {
+        "title": "Carga Rápida",
+        "description": "Optimizada para máxima velocidad",
+        "icon": "Zap"
+      },
+      {
+        "title": "Hosting Incluido",
+        "description": "Un año de alojamiento gratuito",
+        "icon": "Server"
+      },
+      {
+        "title": "Dominio .com",
+        "description": "Tu nombre en internet (opcional)",
+        "icon": "Globe"
+      }
+    ]
+  },
+  "process": {
+    "title": "Proceso Simple en 4 Pasos",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Conversación Inicial",
+        "description": "Conocemos tu negocio y necesidades específicas"
+      },
+      {
+        "number": "02",
+        "title": "Pago del 50%",
+        "description": "Confirmamos el proyecto con el primer pago"
+      },
+      {
+        "number": "03",
+        "title": "Desarrollo",
+        "description": "Creamos tu página web en máximo 7 días"
+      },
+      {
+        "number": "04",
+        "title": "Entrega y Pago Final",
+        "description": "Recibes tu página lista y completamos el pago"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Inversión Transparente",
+    "subtitle": "Un precio, todo incluido",
+    "price": "150.000",
+    "currency": "CLP",
+    "features": [
+      "Diseño profesional personalizado",
+      "Hasta 5 secciones",
+      "Formulario de contacto",
+      "Optimización SEO básica",
+      "Responsive para todos los dispositivos",
+      "1 año de hosting gratuito",
+      "Soporte técnico 30 días",
+      "Entrega garantizada en 7 días"
+    ],
+    "payment": {
+      "down_payment": "75.000",
+      "final_payment": "75.000"
+    }
+  },
+  "faq": [
+    {
+      "question": "¿Qué necesito entregar para empezar?",
+      "answer": "Solo necesitas tu logo (si tienes), algunas fotos de tu trabajo o empresa, textos sobre tus servicios, y tus datos de contacto. Te guiamos en todo el proceso."
+    },
+    {
+      "question": "¿Realmente entregan en 7 días?",
+      "answer": "Sí, garantizamos la entrega en máximo 7 días hábiles desde que recibimos el 50% del pago y todos los materiales necesarios."
+    },
+    {
+      "question": "¿Qué pasa si no me gusta el resultado?",
+      "answer": "Incluimos hasta 2 rondas de revisiones para asegurar que quedes 100% satisfecho con tu página web."
+    },
+    {
+      "question": "¿Incluye el dominio?",
+      "answer": "El hosting está incluido por un año. El dominio .com es opcional por $15.000 adicionales anuales."
+    }
+  ]
+}
