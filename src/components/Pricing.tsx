@@ -143,7 +143,7 @@ export default function Pricing({ data, className = "" }: PricingProps) {
                     Dominio .com
                   </h4>
                   <span className="text-[var(--primary)] font-bold">
-                    +$15.000/año
+                    +$15,000/año
                   </span>
                 </div>
                 <p className="text-[var(--neutral-medium)] text-sm mb-4">
@@ -162,7 +162,7 @@ export default function Pricing({ data, className = "" }: PricingProps) {
                     Soporte Premium
                   </h4>
                   <span className="text-[var(--primary)] font-bold">
-                    +$25.000/mes
+                    +$25,000/mes
                   </span>
                 </div>
                 <p className="text-[var(--neutral-medium)] text-sm mb-4">

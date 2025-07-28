@@ -153,16 +153,16 @@ export default function About({ data, className = "" }: AboutProps) {
                   7D
                 </div>
 
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-lg border border-gray-100">
+                <div className="absolute -bottom-16 -left-6 bg-white rounded-xl p-4 shadow-lg border border-gray-100">
                   <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                       <CheckCircle size={24} className="text-green-600" />
                     </div>
-                    <div>
+                    <div className="">
                       <div className="font-semibold text-[var(--neutral-dark)]">
                         Proyecto Entregado
                       </div>
-                      <div className="text-sm text-[var(--neutral-medium)]">
+                      <div className=" text-sm text-[var(--neutral-medium)]">
                         En tiempo récord
                       </div>
                     </div>

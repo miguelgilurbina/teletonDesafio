@@ -6,8 +6,8 @@
   },
   "contact": {
     "email": "contacto@tuweben7dias.com",
-    "phone": "+56 9 1234 5678",
-    "whatsapp": "+56912345678",
+    "phone": "+56 9 7722 1088",
+    "whatsapp": "+56977221088",
     "social": {
       "instagram": "https://instagram.com/tuweben7dias",
       "linkedin": "https://linkedin.com/company/tuweben7dias"
@@ -80,35 +80,40 @@
       }
     ]
   },
-  "process": {
-    "title": "Proceso Simple en 4 Pasos",
+ "process": {
+    "title": "Proceso Simple en 5 Pasos",
     "steps": [
       {
         "number": "01",
         "title": "Conversación Inicial",
-        "description": "Conocemos tu negocio y necesidades específicas"
+        "description": "Conocemos tu negocio, necesidades y objetivos específicos para tu página web"
       },
       {
-        "number": "02",
+        "number": "02", 
         "title": "Pago del 50%",
-        "description": "Confirmamos el proyecto con el primer pago"
+        "description": "Confirmamos el proyecto con el primer pago y te enviamos el formulario detallado"
       },
       {
         "number": "03",
-        "title": "Desarrollo",
-        "description": "Creamos tu página web en máximo 7 días"
+        "title": "Desarrollo Inicial", 
+        "description": "Creamos la estructura y diseño base de tu página web"
       },
       {
         "number": "04",
-        "title": "Entrega y Pago Final",
-        "description": "Recibes tu página lista y completamos el pago"
+        "title": "Revisión y Ajustes",
+        "description": "Te mostramos el avance y realizamos hasta 2 rondas de cambios incluidos"
+      },
+      {
+        "number": "05",
+        "title": "Entrega Final",
+        "description": "Recibes tu página web completa, funcional y lista para usar"
       }
     ]
   },
   "pricing": {
     "title": "Inversión Transparente",
     "subtitle": "Un precio, todo incluido",
-    "price": "150.000",
+    "price": "180,000",
     "currency": "CLP",
     "features": [
       "Diseño profesional personalizado",
@@ -121,8 +126,8 @@
       "Entrega garantizada en 7 días"
     ],
     "payment": {
-      "down_payment": "75.000",
-      "final_payment": "75.000"
+      "down_payment": "90,000",
+      "final_payment": "90,000"
     }
   },
   "faq": [
