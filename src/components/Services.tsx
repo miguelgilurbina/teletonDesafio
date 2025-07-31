@@ -61,7 +61,7 @@ export default function Services({ data, className = "" }: ServicesProps) {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">

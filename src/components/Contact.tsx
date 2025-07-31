@@ -73,7 +73,7 @@ export default function Contact({ data, className = "" }: ContactProps) {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.0 }}
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
