@@ -5,7 +5,7 @@
     "description": "Transforma tu presencia digital con páginas web profesionales entregadas en tiempo récord"
   },
   "contact": {
-    "email": "contacto@tuweben7dias.com",
+    "email": "miguel.gil.9210@gmail.com",
     "phone": "+56 9 7722 1088",
     "whatsapp": "+56977221088",
     "social": {
@@ -129,26 +129,6 @@
     }
   ]
 },
-  "pricing": {
-    "title": "Inversión Transparente",
-    "subtitle": "Un precio, todo incluido",
-    "price": "180,000",
-    "currency": "CLP",
-    "features": [
-      "Diseño profesional personalizado",
-      "Hasta 5 secciones",
-      "Formulario de contacto",
-      "Optimización SEO básica",
-      "Responsive para todos los dispositivos",
-      "1 año de hosting gratuito",
-      "Soporte técnico 30 días",
-      "Entrega garantizada en 7 días"
-    ],
-    "payment": {
-      "down_payment": "90,000",
-      "final_payment": "90,000"
-    }
-  },
   "faq": [
   {
     "question": "¿Por qué elegir TuWebEn7Días en lugar de Wix o WordPress?",

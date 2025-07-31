@@ -32,7 +32,6 @@ export default function Footer({ data, className = "" }: FooterProps) {
       { name: "Inicio", href: "#hero" },
       { name: "Servicios", href: "#services" },
       { name: "Proceso", href: "#process" },
-      { name: "Precios", href: "#pricing" },
     ],
     support: [
       { name: "Preguntas Frecuentes", href: "#faq" },
@@ -220,10 +219,23 @@ export default function Footer({ data, className = "" }: FooterProps) {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="text-center"
           >
-            <div className="flex items-center justify-center space-x-2 text-gray-400 text-sm">
-              <span>Hecho con</span>
-              <Heart size={16} className="text-red-500" />
-              <span>en Santiago, Chile</span>
+            <div className="flex flex-col items-center justify-center space-y-2 text-gray-400 text-sm">
+              <div className="flex items-center space-x-2">
+                <span>Hecho con</span>
+                <Heart size={16} className="text-red-500" />
+                <span>en Santiago, Chile</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span>Desarrollado por</span>
+                <a
+                  href="https://miguelgilurbina.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--primary)] hover:text-[var(--accent)] transition-colors font-medium"
+                >
+                  Miguel Gil Urbina
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>
