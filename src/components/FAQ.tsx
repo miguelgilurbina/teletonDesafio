@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, MessageCircle, Lightbulb } from "lucide-react";
 import { FAQProps } from "@/lib/types";
 
 export default function FAQ({ data, className = "" }: FAQProps) {
@@ -17,122 +17,141 @@ export default function FAQ({ data, className = "" }: FAQProps) {
     );
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        // ✅ Sin ease - usa default que funciona perfecto
-      },
-    },
-  };
-
   return (
-    <section className={`section-padding bg-gradient-faq ${className}`}>
-      <div className="container-custom">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          {/* Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--neutral-dark)] mb-6">
-              Preguntas Frecuentes
-            </h2>
-            <p className="text-xl text-[var(--neutral-medium)] max-w-3xl mx-auto">
-              Resolvemos las dudas más comunes sobre nuestro servicio
-            </p>
-          </motion.div>
+    <section className={`py-16 md:py-24 bg-gradient-faq ${className}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 bg-[var(--primary)]/10 rounded-full text-[var(--primary)] font-medium text-sm mb-6">
+            <Lightbulb size={16} className="mr-2" />
+            Resolvemos tus dudas
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--neutral-dark)] mb-6">
+            Preguntas Frecuentes
+          </h2>
+          <p className="text-xl text-[var(--neutral-medium)] max-w-3xl mx-auto">
+            Las dudas más importantes que nos hacen nuestros clientes antes de
+            decidirse
+          </p>
+        </div>
 
-          {/* FAQ Items */}
-          <div className="max-w-4xl mx-auto">
-            {data.map((item, index) => {
-              const isOpen = openItems.includes(index);
+        {/* FAQ Items */}
+        <div className="max-w-4xl mx-auto mb-20">
+          {data.map((item, index) => {
+            const isOpen = openItems.includes(index);
 
-              return (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="mb-4"
-                >
-                  <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-[var(--primary)]/30 transition-all duration-300">
-                    <button
-                      onClick={() => toggleItem(index)}
-                      className="w-full px-6 py-6 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/20"
+            return (
+              <div key={index} className="mb-6">
+                <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-[var(--primary)]/30 transition-all duration-300 hover:shadow-lg">
+                  <button
+                    onClick={() => toggleItem(index)}
+                    className="w-full px-8 py-6 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/20 group"
+                  >
+                    <h3 className="text-lg md:text-xl font-semibold text-[var(--neutral-dark)] pr-4 group-hover:text-[var(--primary)] transition-colors">
+                      {item.question}
+                    </h3>
+                    <div
+                      className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        isOpen
+                          ? "bg-[var(--primary)] text-white scale-110"
+                          : "bg-[var(--primary)]/10 text-[var(--primary)] group-hover:bg-[var(--primary)]/20"
+                      }`}
                     >
-                      <h3 className="text-lg font-semibold text-[var(--neutral-dark)] pr-4">
-                        {item.question}
-                      </h3>
-                      <div
-                        className={`flex-shrink-0 w-8 h-8 rounded-full bg-[var(--primary)]/10 flex items-center justify-center transition-all duration-300 ${
-                          isOpen
-                            ? "bg-[var(--primary)] text-white"
-                            : "text-[var(--primary)]"
-                        }`}
-                      >
-                        {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                      </div>
-                    </button>
+                      {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                    </div>
+                  </button>
 
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{
-                            duration: 0.3,
-                            ease: [0.25, 0.46, 0.45, 0.94],
-                          }}
-                        >
-                          <div className="px-6 pb-6">
-                            <p className="text-[var(--neutral-medium)] leading-relaxed">
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{
+                          duration: 0.3,
+                          ease: [0.25, 0.46, 0.45, 0.94],
+                        }}
+                      >
+                        <div className="px-8 pb-8">
+                          <div className="border-t border-gray-100 pt-6">
+                            <p className="text-[var(--neutral-medium)] leading-relaxed text-lg">
                               {item.answer}
                             </p>
                           </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
+            );
+          })}
+        </div>
 
-          {/* Contact CTA */}
-          <motion.div variants={itemVariants} className="mt-16 text-center">
-            <div className="bg-[var(--neutral-light)] rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-[var(--neutral-dark)] mb-4">
-                ¿Tienes más preguntas?
+        {/* Contact CTA */}
+        <div className="mb-16">
+          <div className="bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] rounded-2xl p-8 md:p-12 text-white relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-24 -translate-x-24"></div>
+
+            <div className="relative z-10 text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <MessageCircle size={32} className="text-white" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                ¿Sigues con dudas?
               </h3>
-              <p className="text-[var(--neutral-medium)] mb-6">
-                Estamos aquí para ayudarte. Conversemos sobre tu proyecto sin
-                compromiso.
+              <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Conversemos sin compromiso. Te explico exactamente cómo podemos
+                ayudarte con tu proyecto específico.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="btn-primary">
-                  Solicitar Llamada Gratuita
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button className="bg-white text-[var(--primary)] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/90 transition-colors duration-300 shadow-lg">
+                  Agendar Llamada de 30 min
                 </button>
-                <button className="btn-secondary">Enviar WhatsApp</button>
+                <button className="bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/30 transition-colors duration-300">
+                  Escribir por WhatsApp
+                </button>
+              </div>
+
+              <div className="mt-6 text-white/80">
+                📞 Respuesta en menos de 2 horas • 🚀 Sin presión de venta
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
+
+        {/* Trust Signals */}
+        <div className="text-center">
+          <div className="grid md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+            <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[var(--primary)]/30 transition-colors">
+              <div className="text-3xl font-bold text-[var(--primary)] mb-2">
+                7 días
+              </div>
+              <div className="text-[var(--neutral-medium)]">
+                Entrega garantizada
+              </div>
+            </div>
+            <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[var(--primary)]/30 transition-colors">
+              <div className="text-3xl font-bold text-[var(--primary)] mb-2">
+                $250K
+              </div>
+              <div className="text-[var(--neutral-medium)]">
+                Precio fijo total
+              </div>
+            </div>
+            <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[var(--primary)]/30 transition-colors">
+              <div className="text-3xl font-bold text-[var(--primary)] mb-2">
+                Next.js
+              </div>
+              <div className="text-[var(--neutral-medium)]">
+                Tecnología moderna
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

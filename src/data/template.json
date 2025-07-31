@@ -14,102 +14,121 @@
     }
   },
   "hero": {
-    "headline": "Tu Página Web Profesional Lista en 7 Días",
-    "subtitle": "Diseño moderno, responsive y optimizado para convertir visitantes en clientes. Perfecto para profesionales y PyMEs que buscan destacar online.",
-    "cta_primary": "Solicitar Mi Página Web",
-    "cta_secondary": "Ver Ejemplos",
-    "features": [
-      "Entrega garantizada en 7 días hábiles",
-      "Diseño 100% responsive",
-      "SEO básico incluido",
-      "Formulario de contacto funcional"
-    ]
-  },
+  "headline": "Tu Página Web Profesional Lista en 7 Días",
+  "subtitle": "Deja de perder clientes por no tener presencia web. Landing page completa, optimizada y lista para generar leads desde el día 1.",
+  "cta_primary": "Quiero Mi Web YA",
+  "cta_secondary": "Ver Casos de Éxito",
+  "features": [
+    "Entrega garantizada en 7 días habiles",
+    "100% responsive y optimizado",
+    "SEO incluido para aparecer en Google",
+    "Formulario que captura leads reales"
+  ]
+},
   "about": {
-    "title": "¿Por Qué Elegirnos?",
-    "subtitle": "Proceso simple, resultados profesionales",
-    "description": "Especializados en crear páginas web que realmente convierten. Nuestro proceso optimizado garantiza entrega rápida sin comprometer la calidad.",
-    "benefits": [
-      {
-        "title": "Proceso Optimizado",
-        "description": "Metodología probada que garantiza entrega en tiempo récord"
-      },
-      {
-        "title": "Diseño Profesional",
-        "description": "Páginas modernas que reflejan la calidad de tu negocio"
-      },
-      {
-        "title": "Soporte Incluido",
-        "description": "Acompañamiento completo desde el primer día"
-      }
-    ]
-  },
+  "title": "¿Por Qué TuWebEn7Días?",
+  "subtitle": "La alternativa inteligente entre agencias caras y freelancers impredecibles",
+  "description": "No somos una agencia corporativa que cobra $2M ni un freelancer que desaparece. Somos especialistas en landing pages con un sistema probado que entrega calidad profesional en tiempo récord.",
+  "benefits": [
+    {
+      "title": "Stack Tecnológico Moderno",
+      "description": "Next.js + TypeScript + Tailwind CSS - Tu web carga rápido y se ve perfecta en cualquier dispositivo"
+    },
+    {
+      "title": "Precio Fijo Sin Sorpresas",
+      "description": "$250.000 CLP incluye todo: diseño, desarrollo, optimización y hosting por 1 año"
+    },
+    {
+      "title": "Especialización en Conversión",
+      "description": "No solo hacemos webs bonitas, las optimizamos para que generen leads y ventas reales"
+    }
+  ]
+},
   "services": {
-    "title": "¿Qué Incluye Tu Página Web?",
-    "subtitle": "Todo lo que necesitas para empezar",
-    "items": [
-      {
-        "title": "Diseño Responsivo",
-        "description": "Perfecta en computador, tablet y móvil",
-        "icon": "Monitor"
-      },
-      {
-        "title": "SEO Optimizado",
-        "description": "Preparada para aparecer en Google",
-        "icon": "Search"
-      },
-      {
-        "title": "Formulario de Contacto",
-        "description": "Recibe consultas directo a tu email",
-        "icon": "Mail"
-      },
-      {
-        "title": "Carga Rápida",
-        "description": "Optimizada para máxima velocidad",
-        "icon": "Zap"
-      },
-      {
-        "title": "Hosting Incluido",
-        "description": "Un año de alojamiento gratuito",
-        "icon": "Server"
-      },
-      {
-        "title": "Dominio .com",
-        "description": "Tu nombre en internet (opcional)",
-        "icon": "Globe"
-      }
+  "title": "Nuestros Servicios",
+  "subtitle": "Landing page profesional + mantenimiento opcional para hacer crecer tu negocio",
+  "main_service": {
+    "title": "Landing Page Profesional",
+    "description": "Tu página web completa y optimizada en 7 días hábiles",
+    "price": "$250.000",
+    "features": [
+      "Diseño 100% responsive",
+      "SEO básico optimizado", 
+      "Formulario de contacto funcional",
+      "Carga ultrarrápida (Next.js)",
+      "Google Analytics configurado",
+      "Entrega con código fuente"
     ]
   },
+  "maintenance_plans": [
+    {
+      "name": "Plan Básico",
+      "price": "$25.000",
+      "period": "/mes",
+      "description": "Perfecto para mantener tu web segura y actualizada",
+      "popular": false,
+      "features": [
+        "Hosting en Vercel incluido",
+        "Actualizaciones de seguridad automáticas",
+        "Backup semanal automático", 
+        "2 cambios menores al mes",
+        "Soporte técnico por WhatsApp",
+        "Informe mensual de visitas básico"
+      ]
+    },
+    {
+      "name": "Plan Premium", 
+      "price": "$45.000",
+      "period": "/mes",
+      "description": "Para negocios que quieren crecer y optimizar constantemente",
+      "popular": true,
+      "features": [
+        "Todo lo del Plan Básico",
+        "5 cambios menores al mes",
+        "1 cambio mayor cada 3 meses",
+        "Informe analítico detallado mensual",
+        "Optimización SEO trimestral",
+        "Soporte prioritario (respuesta <2h)",
+        "Backup diario automático",
+        "Consultoría web mensual (30 min)"
+      ]
+    }
+  ]
+},
  "process": {
-    "title": "Proceso Simple en 5 Pasos",
-    "steps": [
-      {
-        "number": "01",
-        "title": "Conversación Inicial",
-        "description": "Conocemos tu negocio, necesidades y objetivos específicos para tu página web"
-      },
-      {
-        "number": "02", 
-        "title": "Pago del 50%",
-        "description": "Confirmamos el proyecto con el primer pago y te enviamos el formulario detallado"
-      },
-      {
-        "number": "03",
-        "title": "Desarrollo Inicial", 
-        "description": "Creamos la estructura y diseño base de tu página web"
-      },
-      {
-        "number": "04",
-        "title": "Revisión y Ajustes",
-        "description": "Te mostramos el avance y realizamos hasta 2 rondas de cambios incluidos"
-      },
-      {
-        "number": "05",
-        "title": "Entrega Final",
-        "description": "Recibes tu página web completa, funcional y lista para usar"
-      }
-    ]
-  },
+  "title": "Hoja de ruta de Desarrollo",
+  "subtitle": "Proceso transparente con reuniones estratégicas incluidas",
+  "steps": [
+    {
+      "number": "01",
+      "title": "Reunión Inicial (30 min)",
+      "description": "Te explico todo el proceso, tiempos y resolvemos dudas. Sin compromiso.",
+      "timeline": "Día 0",
+      "deliverable": "Propuesta clara y timeline definido"
+    },
+    {
+      "number": "02", 
+      "title": "Pago 50% + Assessment de Marca",
+      "description": "Confirmas el proyecto y coordinamos reunión para bajar información de tu negocio, marca y objetivos.",
+      "timeline": "Día 1-2",
+      "deliverable": "Manual de marca fundacional + estrategia web"
+    },
+    {
+      "number": "03",
+      "title": "Presentación de Avance",
+      "description": "Te muestro diseño, estructura y contenido para validar dirección antes de finalizar.",
+      "timeline": "Día 3-4",
+      "deliverable": "Demo funcional + sesión de feedback"
+    },
+    {
+      "number": "04",
+      "title": "Entrega Final + Go Live",
+      "description": "Tu web terminada, desplegada y lista. Pago final y entrega de accesos completos.",
+      "timeline": "Día 6-7",
+      "deliverable": "Web online + código fuente + documentación"
+    }
+  ]
+},
   "pricing": {
     "title": "Inversión Transparente",
     "subtitle": "Un precio, todo incluido",
@@ -131,21 +150,25 @@
     }
   },
   "faq": [
-    {
-      "question": "¿Qué necesito entregar para empezar?",
-      "answer": "Solo necesitas tu logo (si tienes), algunas fotos de tu trabajo o empresa, textos sobre tus servicios, y tus datos de contacto. Te guiamos en todo el proceso."
-    },
-    {
-      "question": "¿Realmente entregan en 7 días?",
-      "answer": "Sí, garantizamos la entrega en máximo 7 días hábiles desde que recibimos el 50% del pago y todos los materiales necesarios."
-    },
-    {
-      "question": "¿Qué pasa si no me gusta el resultado?",
-      "answer": "Incluimos hasta 2 rondas de revisiones para asegurar que quedes 100% satisfecho con tu página web."
-    },
-    {
-      "question": "¿Incluye el dominio?",
-      "answer": "El hosting está incluido por un año. El dominio .com es opcional por $15.000 adicionales anuales."
-    }
-  ]
+  {
+    "question": "¿Por qué elegir TuWebEn7Días en lugar de Wix o WordPress?",
+    "answer": "Wix y WordPress son herramientas genéricas. Nosotros creamos páginas optimizadas específicamente para tu industria, con Next.js (la tecnología que usan Netflix y TikTok) que carga 3x más rápido. Además, tienes soporte humano real, no un chatbot."
+  },
+  {
+    "question": "¿Qué pasa después de los 7 días? ¿Se termina el servicio?",
+    "answer": "Para nada. Los 7 días son solo el inicio. Tu página queda 100% funcional y puedes manejarla tú mismo. Pero ofrecemos planes de acompañamiento desde $25.000/mes para quienes quieren seguir optimizando y creciendo su presencia digital."
+  },
+  {
+    "question": "¿Cómo garantizan que mi página va a generar clientes?",
+    "answer": "Usamos una estructura probada: Hero optimizado para conversión, secciones que construyen confianza, formularios que realmente funcionan y llamadas a la acción estratégicamente ubicadas. Además, incluimos Google Analytics para que veas resultados reales desde el día 1."
+  },
+  {
+    "question": "¿Realmente entregan en 7 días hábiles?",
+    "answer": "Sí, es garantizado. Usamos un template base optimizado que personalizamos específicamente para tu negocio con IA. No empezamos desde cero, por eso podemos ser tan rápidos sin sacrificar calidad."
+  },
+  {
+    "question": "¿Qué necesito tener listo antes de empezar?",
+    "answer": "Principalmente: logo (o podemos crearte uno básico), 2-3 fotos tuyas/de tu trabajo, textos sobre tus servicios y datos de contacto. Si no tienes algo, te ayudamos a conseguirlo en la sesión de assessment incluida."
+  }
+]
 }

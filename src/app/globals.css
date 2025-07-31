@@ -79,39 +79,31 @@
   /* PROCESS - Empieza gris suave, sube a blanco */
   .bg-gradient-process {
     background: linear-gradient(180deg, 
-      #f8fafc 0%,                  /* Conecta con Services */
+      #f8fafc 0%,                  /* Conecta con FAQ */
       white 40%,                   /* Blanco dominante */
       #fefefe 80%,                 /* Blanco cálido */
       #fdf8f3 100%                 /* Termina cálido (conecta con Pricing) */
     );
   }
   
-  /* PRICING - Destacado pero conectado */
-  .bg-gradient-pricing {
+
+  
+  /* FAQ - Suave y neutral */
+  .bg-gradient-faq {
     background: linear-gradient(180deg, 
-      #fdf8f3 0%,                  /* Conecta con Process */
+      #fdf8f3 0%,                  /* Conecta con Contact */
       color-mix(in srgb, var(--primary) 8%, white) 30%,  /* Sutil accent */
       white 60%,                   /* Blanco central */
       var(--neutral-light) 100%    /* Termina neutral */
     );
   }
   
-  /* FAQ - Suave y neutral */
-  .bg-gradient-faq {
-    background: linear-gradient(180deg, 
-      var(--neutral-light) 0%,     /* Conecta con Pricing */
-      white 50%,                   /* Blanco medio */
-      #f8fafc 100%                 /* Termina gris suave */
-    );
-  }
-  
   /* CONTACT - Final cálido y acogedor */
   .bg-gradient-contact {
     background: linear-gradient(180deg, 
-      #f8fafc 0%,                  /* Conecta con FAQ */
-      white 30%,                   /* Blanco */
-      #fdf8f3 70%,                 /* Cálido */
-      color-mix(in srgb, var(--accent) 5%, var(--neutral-light)) 100%  /* Final suave */
+      var(--neutral-light) 0%,     /* Conecta con FAQ */
+      white 50%,                   /* Blanco medio */
+      #f8fafc 100%                 /* Termina gris suave */
     );
   }
 }

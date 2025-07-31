@@ -31,22 +31,34 @@ export interface SiteData {
     }[];
   };
   services: {
+  title: string;
+  subtitle: string;
+  main_service: {
     title: string;
-    subtitle: string;
-    items: {
-      title: string;
-      description: string;
-      icon: string;
-    }[];
+    description: string;
+    price: string;
+    features: string[];
   };
+  maintenance_plans: {
+    name: string;
+    price: string;
+    period: string;
+    description: string;
+    popular: boolean;
+    features: string[];
+  }[];
+};
   process: {
+  title: string;
+  subtitle: string;  // ✨ NUEVO
+  steps: {
+    number: string;
     title: string;
-    steps: {
-      number: string;
-      title: string;
-      description: string;
-    }[];
-  };
+    description: string;
+    timeline: string;      // ✨ NUEVO
+    deliverable: string;   // ✨ NUEVO
+  }[];
+};
   pricing: {
     title: string;
     subtitle: string;
