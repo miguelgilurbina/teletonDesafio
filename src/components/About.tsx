@@ -13,6 +13,7 @@ import {
   Users,
   Award,
 } from "lucide-react";
+import Image from "next/image";
 import { AboutProps } from "@/lib/types";
 
 export default function About({ data, className = "" }: AboutProps) {
@@ -310,6 +311,151 @@ export default function About({ data, className = "" }: AboutProps) {
                   <span>🎯 Calidad Profesional</span>
                   <span>⚡ Entrega Rápida</span>
                   <span>💰 Precio Justo</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Miguel Gil Section - AGREGAR DESPUÉS DEL Value Proposition Summary */}
+          <motion.div variants={itemVariants} className="mt-20">
+            <div className="bg-white rounded-2xl p-8 md:p-12 border border-gray-100 shadow-lg">
+              <div className="grid lg:grid-cols-3 gap-8 items-center">
+                {/* Photo */}
+                <div className="lg:col-span-1">
+                  <div className="relative">
+                    {/* Placeholder para tu foto */}
+                    {/* <div className="w-64 h-64 mx-auto bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-2xl flex items-center justify-center text-white text-4xl font-bold">
+                      MG
+                    </div> */}
+                    <Image
+                      src="/images/fotoPerfil.png"
+                      alt="Miguel Gil - Fundador de TuWebEn7Días"
+                      width={256}
+                      height={256}
+                      className="w-64 h-64 mx-auto rounded-2xl object-cover shadow-lg"
+                      priority
+                    />
+
+                    {/* Badge de credibilidad */}
+                    <div className="absolute -bottom-4 -right-4 bg-[var(--accent)] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                      8+ años exp.
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="lg:col-span-2 space-y-6">
+                  <div>
+                    <h3 className="text-3xl md:text-3xl font-bold text-[var(--neutral-dark)] mb-2">
+                      Conoce a Miguel Gil Urbina
+                    </h3>
+                    <p className="text-lg text-[var(--primary)] font-semibold mb-4">
+                      Fundador y desarrollador principal de TuWebEn7Días
+                    </p>
+                  </div>
+
+                  <p className="text-[var(--neutral-dark)] leading-relaxed">
+                    Con{" "}
+                    <strong>
+                      8+ años combinando estrategia comercial y desarrollo
+                      tecnológico
+                    </strong>
+                    , Miguel entiende tanto el lado técnico como el empresarial
+                    de cada proyecto.
+                  </p>
+
+                  {/* Experience highlights */}
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <Users size={16} className="text-[var(--primary)]" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-[var(--neutral-dark)] text-sm">
+                          6 años gestionando redes de distribución
+                        </div>
+                        <div className="text-xs text-[var(--neutral-medium)]">
+                          Empresas tecnológicas
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <Code size={16} className="text-[var(--primary)]" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-[var(--neutral-dark)] text-sm">
+                          Full Stack Developer especializado
+                        </div>
+                        <div className="text-xs text-[var(--neutral-medium)]">
+                          Next.js y TypeScript
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <Award size={16} className="text-[var(--primary)]" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-[var(--neutral-dark)] text-sm">
+                          Evaluador oficial de modelos de IA
+                        </div>
+                        <div className="text-xs text-[var(--neutral-medium)]">
+                          GPT-4, Claude, Gemini en Outlier
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <TrendingUp
+                          size={16}
+                          className="text-[var(--primary)]"
+                        />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-[var(--neutral-dark)] text-sm">
+                          Creador de Prompt Maker
+                        </div>
+                        <div className="text-xs text-[var(--neutral-medium)]">
+                          Plataforma que democratiza la IA
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Why TuWebEn7Días */}
+                  <div className="bg-[var(--primary)]/5 rounded-lg p-6 border-l-4 border-[var(--primary)]">
+                    <h4 className="font-bold text-[var(--neutral-dark)] mb-2">
+                      ¿Por qué TuWebEn7Días?
+                    </h4>
+                    <p className="text-[var(--neutral-medium)] italic">
+                      Después de años viendo cómo las pymes luchan con
+                      proveedores web lentos y costosos, decidí crear la
+                      solución que yo habría querido:{" "}
+                      <strong>
+                        calidad profesional, tiempo récord, precio justo
+                      </strong>
+                      .
+                    </p>
+                  </div>
+
+                  {/* Contact link */}
+                  <div className="flex items-center space-x-4 pt-4">
+                    <a
+                      href="https://miguelgilurbina.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--primary)] hover:text-[var(--accent)] transition-colors font-medium text-sm"
+                    >
+                      Ver perfil completo →
+                    </a>
+                    <span className="text-[var(--neutral-medium)] text-sm">
+                      📍 Santiago, Chile
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

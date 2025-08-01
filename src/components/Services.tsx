@@ -21,6 +21,13 @@ import {
 import { ServicesProps } from "@/lib/types";
 
 export default function Services({ data, className = "" }: ServicesProps) {
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -65,16 +72,16 @@ export default function Services({ data, className = "" }: ServicesProps) {
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--neutral-dark)] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--neutral-dark)] mb-4 mt-6">
               {data.title}
             </h2>
-            <p className="text-xl text-[var(--neutral-medium)] max-w-3xl mx-auto">
+            <p className="text-xl text-[var(--neutral-medium)] max-w-3xl mx-auto mt-4">
               {data.subtitle}
             </p>
           </motion.div>
 
           {/* Main Service - Landing Page */}
-          <motion.div variants={itemVariants} className="mb-20">
+          <motion.div variants={itemVariants} className="mb-16">
             <div className="bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-2xl p-8 md:p-12 text-white relative overflow-hidden">
               {/* Background decoration */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32"></div>
@@ -124,9 +131,15 @@ export default function Services({ data, className = "" }: ServicesProps) {
                 </div>
 
                 <div className="text-center mt-8">
-                  <button className="bg-white text-[var(--primary)] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/90 transition-colors duration-300 shadow-lg">
-                    Empezar Mi Proyecto
-                  </button>
+                  <a
+                    href="https://calendly.com/miguel-gil-9210/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="bg-white text-[var(--primary)] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/90 transition-colors duration-300 shadow-lg">
+                      Empezar Mi Proyecto
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -290,12 +303,15 @@ export default function Services({ data, className = "" }: ServicesProps) {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="btn-primary px-8 py-4">
+                <button
+                  onClick={() => scrollToSection("#contact")}
+                  className="btn-primary px-8 py-4"
+                >
                   Solicitar Cotización Personalizada
                 </button>
-                <button className="btn-secondary px-8 py-4">
+                {/* <button className="btn-secondary px-8 py-4">
                   Ver Ejemplos de Proyectos
-                </button>
+                </button> */}
               </div>
 
               <div className="mt-6 text-sm text-[var(--neutral-medium)]">

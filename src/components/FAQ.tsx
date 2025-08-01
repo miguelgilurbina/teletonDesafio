@@ -108,15 +108,28 @@ export default function FAQ({ data, className = "" }: FAQProps) {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="bg-white text-[var(--primary)] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/90 transition-colors duration-300 shadow-lg">
-                  Agendar Llamada de 30 min
-                </button>
-                <button className="bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/30 transition-colors duration-300">
-                  Escribir por WhatsApp
-                </button>
+                <a
+                  href="https://calendly.com/miguel-gil-9210/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="bg-white text-[var(--primary)] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/90 transition-colors duration-300 shadow-lg">
+                    Agendar Llamada de 30 min
+                  </button>
+                </a>
+
+                <a
+                  href="https://wa.me/56912345678?text=Hola, me interesa tu servicio de páginas web"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/30 transition-colors duration-300">
+                    Escribir por WhatsApp
+                  </button>
+                </a>
               </div>
 
-              <div className="mt-6 text-white/80">
+              <div className="mt-6 text-white">
                 📞 Respuesta en menos de 2 horas • 🚀 Sin presión de venta
               </div>
             </div>

@@ -341,9 +341,16 @@ export default function Process({ data, className = "" }: ProcessProps) {
                 Empezamos con una conversación de 30 minutos sin compromiso. Te
                 explico todo el proceso y resolvemos tus dudas.
               </p>
-              <button className="btn-primary text-lg px-10 py-4 mr-4 shadow-lg hover:shadow-xl transition-all duration-300">
-                Agendar Reunión Inicial
-              </button>
+              <a
+                href="https://calendly.com/miguel-gil-9210/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="btn-primary text-lg px-10 py-4 mr-4 shadow-lg hover:shadow-xl transition-all duration-300">
+                  Agendar Reunión Inicial
+                </button>
+              </a>
+
               <p className="text-[var(--neutral-medium)] mt-4 text-sm">
                 📞 Reunión por Google Meet • Sin compromisos • 100% gratuita
               </p>

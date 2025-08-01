@@ -18,6 +18,7 @@ interface FormData {
 export default function Contact({ data, className = "" }: ContactProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const {
     register,
@@ -28,16 +29,32 @@ export default function Contact({ data, className = "" }: ContactProps) {
 
   const onSubmit = async (formData: FormData) => {
     setIsSubmitting(true);
+    setSubmitError(false);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        reset();
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        setSubmitError(true);
+        setTimeout(() => setSubmitError(false), 5000);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setSubmitError(true);
+      setTimeout(() => setSubmitError(false), 5000);
+    }
 
     setIsSubmitting(false);
-    setIsSubmitted(true);
-    reset();
-
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
   };
 
   const containerVariants = {
@@ -58,7 +75,6 @@ export default function Contact({ data, className = "" }: ContactProps) {
       y: 0,
       transition: {
         duration: 0.6,
-        // ✅ Sin ease - usa default que funciona perfecto
       },
     },
   };
@@ -98,6 +114,13 @@ export default function Contact({ data, className = "" }: ContactProps) {
                   <div className="mb-6 p-4 bg-green-100 border border-green-200 rounded-lg text-green-700">
                     ¡Gracias! Tu solicitud ha sido enviada. Te contactaremos
                     pronto.
+                  </div>
+                )}
+
+                {submitError && (
+                  <div className="mb-6 p-4 bg-red-100 border border-red-200 rounded-lg text-red-700">
+                    Hubo un error enviando tu mensaje. Por favor intenta
+                    nuevamente o contáctanos directamente.
                   </div>
                 )}
 
