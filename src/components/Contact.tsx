@@ -82,7 +82,7 @@ export default function Contact({ data, className = "" }: ContactProps) {
   return (
     <section
       id="contact"
-      className={`section-padding bg-gradient-contact ${className}`}
+      className={`section-paddin-last bg-gradient-contact ${className}`}
     >
       <div className="container-custom">
         <motion.div

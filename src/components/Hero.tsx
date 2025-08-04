@@ -45,7 +45,7 @@ export default function Hero({ data, className = "" }: HeroProps) {
   return (
     <section
       id="hero"
-      className={`bg-gradient-hero py-8 relative min-h-screen flex items-center justify-center overflow-hidden ${className}`}
+      className={`bg-gradient-hero section-padding-first relative min-h-screen flex items-center justify-center overflow-hidden ${className}`}
     >
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-primary from-[var(--neutral-light)] via-white to-[var(--neutral-light)]/50"></div>

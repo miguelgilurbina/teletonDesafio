@@ -71,8 +71,8 @@ export default function Services({ data, className = "" }: ServicesProps) {
           viewport={{ once: true, amount: 0.1 }}
         >
           {/* Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--neutral-dark)] mb-4 mt-6">
+          <motion.div variants={itemVariants} className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--neutral-dark)] ">
               {data.title}
             </h2>
             <p className="text-xl text-[var(--neutral-medium)] max-w-3xl mx-auto mt-4">
@@ -81,7 +81,7 @@ export default function Services({ data, className = "" }: ServicesProps) {
           </motion.div>
 
           {/* Main Service - Landing Page */}
-          <motion.div variants={itemVariants} className="mb-16">
+          <motion.div variants={itemVariants} className="mb-12">
             <div className="bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-2xl p-8 md:p-12 text-white relative overflow-hidden">
               {/* Background decoration */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32"></div>
@@ -210,7 +210,7 @@ export default function Services({ data, className = "" }: ServicesProps) {
             {/* Maintenance Options - MÁS INFORMATIVO */}
             <div className="bg-gradient-to-r from-[var(--primary)]/5 to-[var(--accent)]/5 rounded-2xl p-8 border border-[var(--primary)]/20">
               <div className="text-center mb-8">
-                <h4 className="text-xl font-bold text-[var(--neutral-dark)] mb-2">
+                <h4 className="text-2xl md:text-3xl font-bold text-[var(--neutral-dark)] mb-2">
                   Opciones de Acompañamiento Disponibles
                 </h4>
                 <p className="text-[var(--neutral-medium)]">
@@ -292,7 +292,7 @@ export default function Services({ data, className = "" }: ServicesProps) {
           <motion.div variants={itemVariants} className="text-center">
             <div className="bg-gradient-to-r from-[var(--primary)]/5 to-[var(--accent)]/5 rounded-2xl p-8 border border-[var(--primary)]/20 max-w-4xl mx-auto">
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-[var(--neutral-dark)] mb-4">
+                <h3 className="text-2xl md:text-3xl font-bold text-[var(--neutral-dark)] mb-4">
                   ¿Necesitas algo más específico?
                 </h3>
                 <p className="text-[var(--neutral-medium)] max-w-2xl mx-auto">

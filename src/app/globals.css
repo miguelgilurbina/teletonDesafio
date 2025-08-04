@@ -39,7 +39,15 @@
   }
   
   .section-padding {
-    @apply py-16 md:py-4;
+    @apply pt-8 sm:pt-12 lg:pt-16;
+  }
+
+  .section-padding-first {
+    @apply pt-16 sm:pt-20 lg:pt-24;
+  }
+
+  .section-padding-last {
+    @apply pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24;
   }
   
   .container-custom {
