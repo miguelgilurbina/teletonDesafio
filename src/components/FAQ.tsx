@@ -89,7 +89,7 @@ export default function FAQ({ data, className = "" }: FAQProps) {
         </div>
 
         {/* Contact CTA */}
-        <div className="mb-16">
+        <div>
           <div className="bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] rounded-2xl p-8 md:p-12 text-white relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32"></div>
@@ -131,36 +131,6 @@ export default function FAQ({ data, className = "" }: FAQProps) {
 
               <div className="mt-6 text-white">
                 📞 Respuesta en menos de 2 horas • 🚀 Sin presión de venta
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Trust Signals */}
-        <div className="text-center">
-          <div className="grid md:grid-cols-3 gap-8 max-w-2xl mx-auto">
-            <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[var(--primary)]/30 transition-colors">
-              <div className="text-3xl font-bold text-[var(--primary)] mb-2">
-                7 días
-              </div>
-              <div className="text-[var(--neutral-medium)]">
-                Entrega garantizada
-              </div>
-            </div>
-            <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[var(--primary)]/30 transition-colors">
-              <div className="text-3xl font-bold text-[var(--primary)] mb-2">
-                $250K
-              </div>
-              <div className="text-[var(--neutral-medium)]">
-                Precio fijo total
-              </div>
-            </div>
-            <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[var(--primary)]/30 transition-colors">
-              <div className="text-3xl font-bold text-[var(--primary)] mb-2">
-                Next.js
-              </div>
-              <div className="text-[var(--neutral-medium)]">
-                Tecnología moderna
               </div>
             </div>
           </div>

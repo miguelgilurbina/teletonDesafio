@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { SiteData } from "@/lib/types";
 
@@ -9,9 +10,42 @@ interface HeaderProps {
   className?: string;
 }
 
+// Hook personalizado para manejar navegación inteligente
+const useSmartNavigation = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHomePage = pathname === "/";
+
+  const navigateToSection = (href: string) => {
+    if (isHomePage) {
+      // Si estamos en home, scroll directo
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Si estamos en otra página, ir a home y luego scroll
+      router.push(`/${href}`);
+    }
+  };
+
+  const navigateToPage = (href: string) => {
+    router.push(href);
+  };
+
+  return {
+    isHomePage,
+    navigateToSection,
+    navigateToPage,
+    pathname,
+  };
+};
+
 export default function Header({ data, className = "" }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { isHomePage, navigateToSection, navigateToPage, pathname } =
+    useSmartNavigation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,20 +55,70 @@ export default function Header({ data, className = "" }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Configuración de navegación adaptativa
   const navigation = [
-    { name: "Inicio", href: "#hero" },
-    { name: "Servicios", href: "#services" },
-    { name: "Proceso", href: "#process" },
-    { name: "Precios", href: "#pricing" },
-    { name: "Contacto", href: "#contact" },
+    {
+      name: "Inicio",
+      href: isHomePage ? "#hero" : "/",
+      type: isHomePage ? "scroll" : "link",
+    },
+    {
+      name: "Sobre Nosotros",
+      href: "/about",
+      type: "link",
+    },
+    {
+      name: "Servicios",
+      href: isHomePage ? "#services" : "/#services",
+      type: isHomePage ? "scroll" : "link",
+    },
+    {
+      name: "Proceso",
+      href: isHomePage ? "#process" : "/#process",
+      type: isHomePage ? "scroll" : "link",
+    },
+    {
+      name: "FAQ",
+      href: isHomePage ? "#faq" : "/#faq",
+      type: isHomePage ? "scroll" : "link",
+    },
+    {
+      name: "Contacto",
+      href: isHomePage ? "#contact" : "/#contact",
+      type: isHomePage ? "scroll" : "link",
+    },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleNavigation = (item: (typeof navigation)[0]) => {
+    if (item.type === "link") {
+      if (item.href.startsWith("/#")) {
+        // Para enlaces que van a home + sección
+        navigateToSection(item.href.substring(1)); // Quita el /
+      } else {
+        // Para páginas regulares
+        navigateToPage(item.href);
+      }
+    } else {
+      // Para scroll interno
+      navigateToSection(item.href);
     }
     setIsMenuOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    if (isHomePage) {
+      navigateToSection("#hero");
+    } else {
+      navigateToPage("/");
+    }
+  };
+
+  const handleCtaClick = () => {
+    if (isHomePage) {
+      navigateToSection("#contact");
+    } else {
+      navigateToSection("#contact"); // Esto llevará a home + contact
+    }
   };
 
   return (
@@ -47,8 +131,11 @@ export default function Header({ data, className = "" }: HeaderProps) {
     >
       <div className="container-custom">
         <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
+          {/* Logo - Navigation inteligente */}
+          <button
+            onClick={handleLogoClick}
+            className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+          >
             <div className="w-10 h-10 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">7D</span>
             </div>
@@ -60,15 +147,21 @@ export default function Header({ data, className = "" }: HeaderProps) {
                 {data.tagline}
               </p>
             </div>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-[var(--neutral-dark)] hover:text-[var(--primary)] transition-colors duration-200 font-medium"
+                onClick={() => handleNavigation(item)}
+                className={`transition-colors duration-200 font-medium ${
+                  // Resaltar página actual
+                  (item.href === "/about" && pathname === "/about") ||
+                  (item.name === "Inicio" && pathname === "/")
+                    ? "text-[var(--primary)]"
+                    : "text-[var(--neutral-dark)] hover:text-[var(--primary)]"
+                }`}
               >
                 {item.name}
               </button>
@@ -95,7 +188,7 @@ export default function Header({ data, className = "" }: HeaderProps) {
               </a>
             </div>
             <button
-              onClick={() => scrollToSection("#contact")}
+              onClick={handleCtaClick}
               className="btn-primary text-sm px-4 py-2"
             >
               Solicitar Página
@@ -118,8 +211,13 @@ export default function Header({ data, className = "" }: HeaderProps) {
               {navigation.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left text-[var(--neutral-dark)] hover:text-[var(--primary)] transition-colors duration-200 font-medium py-2"
+                  onClick={() => handleNavigation(item)}
+                  className={`text-left transition-colors duration-200 font-medium py-2 ${
+                    (item.href === "/about" && pathname === "/about") ||
+                    (item.name === "Inicio" && pathname === "/")
+                      ? "text-[var(--primary)]"
+                      : "text-[var(--neutral-dark)] hover:text-[var(--primary)]"
+                  }`}
                 >
                   {item.name}
                 </button>
@@ -141,7 +239,7 @@ export default function Header({ data, className = "" }: HeaderProps) {
                     <span>{data.email}</span>
                   </a>
                   <button
-                    onClick={() => scrollToSection("#contact")}
+                    onClick={handleCtaClick}
                     className="btn-primary text-sm mt-4 self-start"
                   >
                     Solicitar Mi Página Web

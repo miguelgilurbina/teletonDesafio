@@ -2,6 +2,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter, usePathname } from "next/navigation";
 import {
   Heart,
   Mail,
@@ -17,27 +18,105 @@ interface FooterProps {
   className?: string;
 }
 
-export default function Footer({ data, className = "" }: FooterProps) {
-  const currentYear = new Date().getFullYear();
+// Hook reutilizable para navegación inteligente (mismo que header)
+const useSmartNavigation = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHomePage = pathname === "/";
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const navigateToSection = (href: string) => {
+    if (isHomePage) {
+      // Si estamos en home, scroll directo
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Si estamos en otra página, ir a home y luego scroll
+      router.push(`/${href}`);
     }
   };
 
+  const navigateToPage = (href: string) => {
+    router.push(href);
+  };
+
+  return {
+    isHomePage,
+    navigateToSection,
+    navigateToPage,
+    pathname,
+  };
+};
+
+export default function Footer({ data, className = "" }: FooterProps) {
+  const currentYear = new Date().getFullYear();
+  const { isHomePage, navigateToSection, navigateToPage, pathname } =
+    useSmartNavigation();
+
+  // Navegación adaptativa para footer
   const navigation = {
     main: [
-      { name: "Inicio", href: "#hero" },
-      { name: "Servicios", href: "#services" },
-      { name: "Proceso", href: "#process" },
+      {
+        name: "Inicio",
+        href: isHomePage ? "#hero" : "/",
+        type: isHomePage ? "scroll" : "link",
+      },
+      {
+        name: "Servicios",
+        href: isHomePage ? "#services" : "/#services",
+        type: isHomePage ? "scroll" : "link",
+      },
+      {
+        name: "Proceso",
+        href: isHomePage ? "#process" : "/#process",
+        type: isHomePage ? "scroll" : "link",
+      },
     ],
     support: [
-      { name: "Preguntas Frecuentes", href: "#faq" },
-      { name: "Contacto", href: "#contact" },
-      { name: "Soporte Técnico", href: "#contact" },
+      {
+        name: "Preguntas Frecuentes",
+        href: isHomePage ? "#faq" : "/#faq",
+        type: isHomePage ? "scroll" : "link",
+      },
+      {
+        name: "Contacto",
+        href: isHomePage ? "#contact" : "/#contact",
+        type: isHomePage ? "scroll" : "link",
+      },
+      {
+        name: "Sobre Nosotros",
+        href: "/about",
+        type: "link",
+      },
     ],
+  };
+
+  const handleNavigation = (item: {
+    name: string;
+    href: string;
+    type: string;
+  }) => {
+    if (item.type === "link") {
+      if (item.href.startsWith("/#")) {
+        // Para enlaces que van a home + sección
+        navigateToSection(item.href.substring(1)); // Quita el /
+      } else {
+        // Para páginas regulares
+        navigateToPage(item.href);
+      }
+    } else {
+      // Para scroll interno
+      navigateToSection(item.href);
+    }
+  };
+
+  const handleLogoClick = () => {
+    if (isHomePage) {
+      navigateToSection("#hero");
+    } else {
+      navigateToPage("/");
+    }
   };
 
   const socialLinks = [
@@ -59,7 +138,7 @@ export default function Footer({ data, className = "" }: FooterProps) {
         {/* Main Footer Content */}
         <div className="py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Brand Section */}
+            {/* Brand Section - Logo clickeable */}
             <div className="lg:col-span-2">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -67,8 +146,11 @@ export default function Footer({ data, className = "" }: FooterProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                {/* Logo */}
-                <div className="flex items-center space-x-3 mb-6">
+                {/* Logo clickeable */}
+                <button
+                  onClick={handleLogoClick}
+                  className="flex items-center space-x-3 mb-6 hover:opacity-80 transition-opacity"
+                >
                   <div className="w-12 h-12 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-lg flex items-center justify-center">
                     <span className="text-white font-bold text-xl">7D</span>
                   </div>
@@ -76,7 +158,7 @@ export default function Footer({ data, className = "" }: FooterProps) {
                     <h3 className="text-2xl font-bold">{data.name}</h3>
                     <p className="text-gray-400 text-sm">{data.tagline}</p>
                   </div>
-                </div>
+                </button>
 
                 <p className="text-gray-300 mb-6 max-w-md">
                   {data.description}
@@ -124,8 +206,13 @@ export default function Footer({ data, className = "" }: FooterProps) {
                   {navigation.main.map((item) => (
                     <li key={item.name}>
                       <button
-                        onClick={() => scrollToSection(item.href)}
-                        className="text-gray-300 hover:text-white transition-colors"
+                        onClick={() => handleNavigation(item)}
+                        className={`text-left transition-colors ${
+                          (item.href === "/" && pathname === "/") ||
+                          (item.name === "Inicio" && pathname === "/")
+                            ? "text-[var(--primary)]"
+                            : "text-gray-300 hover:text-white"
+                        }`}
                       >
                         {item.name}
                       </button>
@@ -148,8 +235,12 @@ export default function Footer({ data, className = "" }: FooterProps) {
                   {navigation.support.map((item) => (
                     <li key={item.name}>
                       <button
-                        onClick={() => scrollToSection(item.href)}
-                        className="text-gray-300 hover:text-white transition-colors"
+                        onClick={() => handleNavigation(item)}
+                        className={`text-left transition-colors ${
+                          item.href === "/about" && pathname === "/about"
+                            ? "text-[var(--primary)]"
+                            : "text-gray-300 hover:text-white"
+                        }`}
                       >
                         {item.name}
                       </button>
@@ -200,10 +291,28 @@ export default function Footer({ data, className = "" }: FooterProps) {
             </div>
 
             <div className="flex items-center space-x-6 text-gray-400 text-sm">
-              <button className="hover:text-white transition-colors">
+              <button
+                className="hover:text-white transition-colors"
+                onClick={() =>
+                  handleNavigation({
+                    name: "Términos",
+                    href: isHomePage ? "#contact" : "/#contact",
+                    type: isHomePage ? "scroll" : "link",
+                  })
+                }
+              >
                 Términos de Servicio
               </button>
-              <button className="hover:text-white transition-colors">
+              <button
+                className="hover:text-white transition-colors"
+                onClick={() =>
+                  handleNavigation({
+                    name: "Privacidad",
+                    href: isHomePage ? "#contact" : "/#contact",
+                    type: isHomePage ? "scroll" : "link",
+                  })
+                }
+              >
                 Política de Privacidad
               </button>
             </div>
@@ -241,7 +350,7 @@ export default function Footer({ data, className = "" }: FooterProps) {
         </div>
       </div>
 
-      {/* CTA Float Button */}
+      {/* CTA Float Button - Navegación inteligente para WhatsApp */}
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -250,7 +359,7 @@ export default function Footer({ data, className = "" }: FooterProps) {
         className="fixed bottom-6 right-6 z-40"
       >
         <a
-          href={`https://wa.me/${data.whatsapp}?text=Hola! Me interesa obtener una página web profesional`}
+          href={`https://wa.me/${data.whatsapp}?text=Hola! Me interesa obtener una página web profesional. Vi su sitio web y me gustaría conversar sobre mi proyecto.`}
           target="_blank"
           rel="noopener noreferrer"
           className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group"

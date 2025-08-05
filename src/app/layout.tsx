@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
-
+// Import the template data
+import templateData from "@/data/template.json";
+import { SiteData } from "@/lib/types";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -30,6 +34,9 @@ export const metadata: Metadata = {
   },
 };
 
+// Type assertion for the imported JSON
+const siteData = templateData as SiteData;
+
 export default function RootLayout({
   children,
 }: {
@@ -38,9 +45,16 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased`}
+        className={`${inter.variable} ${poppins.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        {/* Header */}
+        <Header data={{ ...siteData.site, ...siteData.contact }} />
+
+        {/* Main Content */}
+        <main className="flex-1">{children}</main>
+
+        {/* Footer */}
+        <Footer data={{ ...siteData.site, ...siteData.contact }} />
       </body>
     </html>
   );

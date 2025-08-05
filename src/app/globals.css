@@ -43,11 +43,11 @@
   }
 
   .section-padding-first {
-    @apply pt-16 sm:pt-20 lg:pt-24;
+    @apply pt-16 sm:pt-8 md:pt-12 lg:pt-16;
   }
 
   .section-padding-last {
-    @apply pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24;
+    @apply pt-8 pb-16 sm:pt-8 sm:pb-8 lg:pt-16 lg:pb-16;
   }
   
   .container-custom {
@@ -73,24 +73,27 @@
       var(--neutral-light) 100%    /* Termina neutral (conecta con Services) */
     );
   }
+
+ 
   
   /* SERVICES - Empieza neutral, mantiene consistencia */
   .bg-gradient-services {
-    background: linear-gradient(180deg, 
+     background: linear-gradient(180deg, 
+      #fdf4ed 0%,                  /* Conecta con Hero bottom */
+      white 30%,                   /* Sube a blanco */
+      #f8fafc 70%,                 /* Gris suave */
+      var(--neutral-light) 100%    /* Termina neutral (conecta con Services) */
+    );
+  }
+  
+
+  /* PROCESS - Empieza gris suave, sube a blanco */
+  .bg-gradient-process {
+     background: linear-gradient(180deg, 
       var(--neutral-light) 0%,     /* Conecta con About */
       #f1f5f9 30%,                 /* Gris claro */
       white 70%,                   /* Blanco medio */
       #f8fafc 100%                 /* Termina gris suave (conecta con Process) */
-    );
-  }
-  
-  /* PROCESS - Empieza gris suave, sube a blanco */
-  .bg-gradient-process {
-    background: linear-gradient(180deg, 
-      #f8fafc 0%,                  /* Conecta con FAQ */
-      white 40%,                   /* Blanco dominante */
-      #fefefe 80%,                 /* Blanco cálido */
-      #fdf8f3 100%                 /* Termina cálido (conecta con Pricing) */
     );
   }
   
@@ -99,19 +102,20 @@
   /* FAQ - Suave y neutral */
   .bg-gradient-faq {
     background: linear-gradient(180deg, 
-      #fdf8f3 0%,                  /* Conecta con Contact */
-      color-mix(in srgb, var(--primary) 8%, white) 30%,  /* Sutil accent */
-      white 60%,                   /* Blanco central */
-      var(--neutral-light) 100%    /* Termina neutral */
+      #f8fafc 0%,                  /* Conecta con FAQ */
+      white 40%,                   /* Blanco dominante */
+      #fefefe 80%,                 /* Blanco cálido */
+      #fdf8f3 100%                 /* Termina cálido (conecta con Pricing) */
     );
   }
   
   /* CONTACT - Final cálido y acogedor */
   .bg-gradient-contact {
     background: linear-gradient(180deg, 
-      var(--neutral-light) 0%,     /* Conecta con FAQ */
-      white 50%,                   /* Blanco medio */
-      #f8fafc 100%                 /* Termina gris suave */
+      #fdf8f3 0%,                  /* Conecta con Contact */
+      color-mix(in srgb, var(--primary) 8%, white) 30%,  /* Sutil accent */
+      white 60%,                   /* Blanco central */
+      var(--neutral-light) 100%    /* Termina neutral */
     );
   }
 }
