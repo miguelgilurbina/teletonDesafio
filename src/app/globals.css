@@ -79,21 +79,22 @@
   /* SERVICES - Empieza neutral, mantiene consistencia */
   .bg-gradient-services {
      background: linear-gradient(180deg, 
-      #fdf4ed 0%,                  /* Conecta con Hero bottom */
-      white 30%,                   /* Sube a blanco */
-      #f8fafc 70%,                 /* Gris suave */
-      var(--neutral-light) 100%    /* Termina neutral (conecta con Services) */
-    );
-  }
-  
-
-  /* PROCESS - Empieza gris suave, sube a blanco */
-  .bg-gradient-process {
-     background: linear-gradient(180deg, 
       var(--neutral-light) 0%,     /* Conecta con About */
       #f1f5f9 30%,                 /* Gris claro */
       white 70%,                   /* Blanco medio */
       #f8fafc 100%                 /* Termina gris suave (conecta con Process) */
+    );
+  }
+    
+  
+
+  /* PROCESS - Empieza gris suave, sube a blanco */
+  .bg-gradient-process {
+   background: linear-gradient(180deg, 
+      #fdf4ed 0%,                  /* Conecta con Hero bottom */
+      white 30%,                   /* Sube a blanco */
+      #f8fafc 70%,                 /* Gris suave */
+      var(--neutral-light) 100%    /* Termina neutral (conecta con Services) */
     );
   }
   

@@ -21,8 +21,8 @@ export default function HomePage() {
         {" "}
         {/* Offset for fixed header */}
         <Hero data={siteData.hero} />
-        <Services data={siteData.services} />
         <Process data={siteData.process} />
+        <Services data={siteData.services} />
         <FAQ data={siteData.faq} />
         <Contact data={siteData.contact} />
       </div>

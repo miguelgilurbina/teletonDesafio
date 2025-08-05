@@ -202,8 +202,8 @@ export default function Hero({ data, className = "" }: HeroProps) {
             <div className="flex items-center justify-center space-x-3">
               <Shield size={24} className="text-green-600" />
               <p className="text-green-800 font-semibold text-sm md:text-base">
-                <strong>Garantía Total:</strong> Si no estás 100% satisfecho, te
-                devolvemos tu dinero
+                <strong>Garantía Total:</strong> Si no cumplimos, te devolvemos
+                tu dinero.
               </p>
             </div>
           </motion.div>
