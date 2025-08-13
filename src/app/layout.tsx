@@ -47,18 +47,17 @@ export const metadata: Metadata = {
     title: "Tu Web En 7 Días - Páginas Web Profesionales",
     description:
       "Páginas web profesionales entregadas en 7 días hábiles. $250.000 precio fijo.",
-    images: ["/public/images/og-image.png"],
+    images: ["/public/og-image.png"],
   },
   // Favicon y meta tags
   icons: {
     icon: [
-      { url: "/public/favicon.ico", sizes: "any" },
+      { url: "/public/favicon.icols", sizes: "any" },
       { url: "/public/favicon.svg", type: "image/svg+xml" },
     ],
-    apple: "/public/images/apple-touch-icon.png",
+    apple: "/public/apple-touch-icon.png",
   },
   themeColor: "#62868D",
-  manifest: "/site.webmanifest",
   other: {
     "msapplication-TileColor": "#62868D",
   },
