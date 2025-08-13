@@ -6,6 +6,7 @@ import "./globals.css";
 // Import the template data
 import templateData from "@/data/template.json";
 import { SiteData } from "@/lib/types";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -20,17 +21,46 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Tu Web En 7 Días - Páginas Web Profesionales",
   description:
-    "Obtén tu página web profesional en 7 días hábiles. Diseño responsive, SEO optimizado, formulario de contacto incluido. Solo $150.000 CLP.",
+    "Obtén tu página web profesional en 7 días hábiles. Diseño responsive, SEO optimizado, formulario de contacto incluido. Solo $250.000 CLP.",
   keywords:
-    "páginas web, diseño web, sitios web profesionales, landing pages, Chile",
+    "páginas web, diseño web, sitios web profesionales, landing pages, Chile, pymes, profesionales independientes",
   authors: [{ name: "Tu Web En 7 Días" }],
   openGraph: {
     title: "Tu Web En 7 Días - Páginas Web Profesionales",
-    description: "Páginas web profesionales entregadas en 7 días hábiles",
+    description:
+      "Páginas web profesionales entregadas en 7 días hábiles. $250.000 precio fijo, sin sorpresas.",
     url: "https://tuweben7dias.com",
     siteName: "Tu Web En 7 Días",
     locale: "es_CL",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Tu Web En 7 Días - Páginas Web Profesionales",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tu Web En 7 Días - Páginas Web Profesionales",
+    description:
+      "Páginas web profesionales entregadas en 7 días hábiles. $250.000 precio fijo.",
+    images: ["/public/images/og-image.png"],
+  },
+  // Favicon y meta tags
+  icons: {
+    icon: [
+      { url: "/public/favicon.ico", sizes: "any" },
+      { url: "/public/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/public/images/apple-touch-icon.png",
+  },
+  themeColor: "#62868D",
+  manifest: "/site.webmanifest",
+  other: {
+    "msapplication-TileColor": "#62868D",
   },
 };
 
