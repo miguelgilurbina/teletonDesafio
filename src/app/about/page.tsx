@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import About from "@/components/About";
+import { About } from "@/components/About";
 import templateData from "@/data/template.json";
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="min-h-screen">
-      <About data={templateData.about} />
+      <About />
     </main>
   );
 }
