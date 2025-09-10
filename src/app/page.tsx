@@ -1,31 +1,41 @@
 // src/app/page.tsx
-
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Process from "@/components/Process";
-import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
-
-// Import the template data
+import { Hero } from "@/components/Hero";
+import { About } from "@/components/About";
+import { ChallengeGrid } from "@/components/ChallengeGrid";
+import { RegistrationForm } from "@/components/RegistrationForm";
+import { FAQ } from "@/components/FAQ";
 import templateData from "@/data/template.json";
-import { SiteData } from "@/lib/types";
 
-// Type assertion for the imported JSON
-const siteData = templateData as SiteData;
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <main className="min-h-screen bg-[var(--neutral-light)]">
-      {/* Main Content */}
-      <div className="pt-20">
-        {" "}
-        {/* Offset for fixed header */}
-        <Hero data={siteData.hero} />
-        <Process data={siteData.process} />
-        <Services data={siteData.services} />
-        <FAQ data={siteData.faq} />
-        <Contact data={siteData.contact} />
-      </div>
+    <main className="min-h-screen">
+      <Hero
+        headline={templateData.hero.headline}
+        subtitle={templateData.hero.subtitle}
+        ctaText={templateData.hero.cta_text}
+      />
+
+      <About />
+
+      <ChallengeGrid challenges={templateData.challenges} />
+
+      <RegistrationForm />
+
+      <FAQ />
     </main>
   );
 }
+
+// Metadata para SEO
+export const metadata = {
+  title: "Desafíos Teletón 2025 - IA para Rehabilitación",
+  description:
+    "Únete a los desafíos de innovación con IA para mejorar la rehabilitación, motivación y inserción laboral en Teletón",
+  keywords: [
+    "Teletón",
+    "rehabilitación",
+    "inteligencia artificial",
+    "tecnología",
+    "desafíos",
+  ],
+};

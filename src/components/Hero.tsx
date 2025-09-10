@@ -1,214 +1,136 @@
-// src/components/Hero.tsx
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, ArrowRight, Zap, Shield, Clock, Target } from "lucide-react";
-import { HeroProps } from "@/lib/types";
+import { ArrowRight, Calendar, Users, Zap } from "lucide-react";
 
-export default function Hero({ data, className = "" }: HeroProps) {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+interface HeroProps {
+  headline: string;
+  subtitle: string;
+  ctaText: string;
+}
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
-  const featureIcons = {
-    "Entrega garantizada en 7 días": Clock,
-    "100% responsive y optimizado": Shield,
-    "SEO incluido para aparecer en Google": Target,
-    "Formulario que captura leads reales": Check,
-  };
-
+export function Hero({ headline, subtitle, ctaText }: HeroProps) {
   return (
-    <section
-      id="hero"
-      className={`bg-gradient-hero section-padding-first relative min-h-screen flex items-center justify-center overflow-hidden ${className}`}
-    >
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-primary from-[var(--neutral-light)] via-white to-[var(--neutral-light)]/50"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background con gradiente Teletón */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#553C9A] via-[#2D3748] to-black" />
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-[var(--primary)]/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[var(--accent)]/10 rounded-full blur-3xl"></div>
+      {/* Overlay pattern */}
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
 
-      <div className="relative z-10 container-custom">
+      {/* Content */}
+      <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+        {/* Logo placeholder - aquí irá el PNG que extraigas */}
         <motion.div
-          className="max-w-6xl mx-auto text-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-8"
         >
-          {/* Urgency Badge */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <div className="inline-flex items-center px-6 py-3 btn-primary rounded-full text-white font-semibold text-sm mb-6 shadow-lg">
-              <Zap size={18} className="mr-2 animate-pulse" />
-              Solo 5 cupos disponibles este mes
+          <div className="w-32 h-32 mx-auto mb-6 bg-[#E53E3E] rounded-full flex items-center justify-center">
+            {/* Placeholder - reemplazar con logo */}
+            <div className="text-4xl font-bold text-white">T</div>
+          </div>
+        </motion.div>
+
+        {/* Event info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-6"
+        >
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
+            <Calendar className="w-4 h-4" />
+            28 y 29 de Noviembre 2025
+          </div>
+        </motion.div>
+
+        {/* Main headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+        >
+          {headline}
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-xl md:text-2xl mb-12 text-gray-200 max-w-3xl mx-auto leading-relaxed"
+        >
+          {subtitle}
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
+          <button className="group bg-[#E53E3E] hover:bg-[#C53030] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-2xl">
+            {ctaText}
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
+
+          <button className="group border-2 border-white/30 hover:border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 backdrop-blur-sm">
+            Conoce más
+          </button>
+        </motion.div>
+
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto"
+        >
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-2">
+              <Zap className="w-6 h-6 text-[#E53E3E]" />
             </div>
+            <div className="text-2xl font-bold">3</div>
+            <div className="text-gray-300">Desafíos IA</div>
+          </div>
 
-            {/* Main Headline */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[var(--neutral-dark)] mb-6 leading-tight">
-              {data.headline.split(" ").map((word, index) => {
-                if (word === "7" || word === "Días") {
-                  return (
-                    <span key={index} className="text-gradient">
-                      {word}{" "}
-                    </span>
-                  );
-                }
-                return <span key={index}>{word} </span>;
-              })}
-            </h1>
-
-            <p className="text-lg md:text-xl text-[var(--neutral-medium)] max-w-3xl mx-auto leading-relaxed">
-              {data.subtitle}
-            </p>
-          </motion.div>
-
-          {/* CTAs */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-          >
-            <button
-              onClick={() => scrollToSection("#contact")}
-              className="btn-primary text-lg px-10 py-5 flex items-center group shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-            >
-              {data.cta_primary}
-              <ArrowRight
-                size={22}
-                className="ml-3 group-hover:translate-x-1 transition-transform"
-              />
-            </button>
-
-            {/* <button
-              onClick={() => scrollToSection("#portfolio")}
-              className="btn-secondary text-lg px-10 py-5 hover:bg-[var(--primary)]/10 transition-all duration-300"
-            >
-              {data.cta_secondary}
-            </button> */}
-          </motion.div>
-
-          {/* Features Grid - OPTIMIZADO */}
-          <motion.div
-            variants={itemVariants}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto mb-16"
-          >
-            {data.features.map((feature, index) => {
-              const IconComponent =
-                featureIcons[feature as keyof typeof featureIcons] || Check;
-
-              return (
-                <div
-                  key={index}
-                  className="bg-white/90 backdrop-blur-sm rounded-lg md:rounded-xl p-4 md:p-6 border border-gray-100 hover:border-[var(--primary)]/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group"
-                >
-                  <div className="w-8 h-8 md:w-10 md:h-10 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center mb-3 md:mb-4 group-hover:bg-[var(--primary)]/20 transition-colors mx-auto">
-                    <IconComponent
-                      size={24}
-                      className="text-[var(--primary)]"
-                    />
-                  </div>
-                  <p className="text-[var(--neutral-dark)] font-medium text-sm md:text-base text-center leading-snug">
-                    {feature}
-                  </p>
-                </div>
-              );
-            })}
-          </motion.div>
-
-          {/* Social Proof MEJORADO */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-center"
-          >
-            {/* Tiempo de Entrega */}
-            <div className="flex flex-col items-center">
-              <div className="flex items-center space-x-2 mb-2">
-                <Clock size={20} className="text-[var(--primary)]" />
-                <p className="text-2xl md:text-3xl font-bold text-[var(--primary)]">
-                  7 días
-                </p>
-              </div>
-              <p className="text-[var(--neutral-medium)] text-sm">
-                Tiempo garantizado
-                <br />
-                de entrega
-              </p>
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-2">
+              <Users className="w-6 h-6 text-[#E53E3E]" />
             </div>
+            <div className="text-2xl font-bold">48h</div>
+            <div className="text-gray-300">de Innovación</div>
+          </div>
 
-            <div className="hidden md:block w-px h-12 bg-gray-300"></div>
-
-            {/* Garantía */}
-            <div className="flex flex-col items-center">
-              <div className="flex items-center space-x-2 mb-2">
-                <Shield size={20} className="text-[var(--accent)]" />
-                <p className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
-                  100%
-                </p>
-              </div>
-              <p className="text-[var(--neutral-medium)] text-sm">
-                Garantía de
-                <br />
-                satisfacción
-              </p>
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-2">
+              <Calendar className="w-6 h-6 text-[#E53E3E]" />
             </div>
-
-            <div className="hidden md:block w-px h-12 bg-gray-300"></div>
-
-            {/* Precio Competitivo */}
-            <div className="flex flex-col items-center">
-              <div className="flex items-center space-x-2 mb-2">
-                <Target size={20} className="text-[var(--primary)]" />
-                <p className="text-2xl md:text-3xl font-bold text-gradient">
-                  $250K
-                </p>
-              </div>
-              <p className="text-[var(--neutral-medium)] text-sm">
-                Precio fijo
-                <br />
-                sin sorpresas
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Garantía destacada */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-12 p-4 md:p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-green-200 max-w-2xl mx-auto"
-          >
-            <div className="flex items-center justify-center space-x-3">
-              <Shield size={24} className="text-green-600" />
-              <p className="text-green-800 font-semibold text-sm md:text-base">
-                <strong>Garantía Total:</strong> Si no cumplimos, te devolvemos
-                tu dinero.
-              </p>
-            </div>
-          </motion.div>
+            <div className="text-2xl font-bold">∞</div>
+            <div className="text-gray-300">Impacto Social</div>
+          </div>
         </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-1 h-3 bg-white/60 rounded-full mt-2"
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }

@@ -2,14 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* src/app/globals.css - Paleta Teletón Optimizada */
 :root {
-  /* Paleta TuWebEn7Días */
-  --primary: #62868D;        /* Azul Enebro - Confianza */
-  --secondary: #D78B7D;      /* Terracota Cálida - Calidez */
-  --accent: #E32283;         /* Magenta CTA - Urgencia */
-  --neutral-light: #F9F3E3;  /* Lino Crema - Fondo */
-  --neutral-dark: #2D3748;   /* Texto principal */
-  --neutral-medium: #718096; /* Texto secundario */
+  /* Colores principales Teletón */
+  --teleton-red: #E53E3E;      /* Rojo icónico del logo */
+  --teleton-red-dark: #C53030; /* Hover states */
+  --teleton-blue: #2D3748;     /* Azul corporativo del fondo */
+  --teleton-purple: #553C9A;   /* Púrpura del gradiente */
+  
+  /* Paleta funcional */
+  --primary: var(--teleton-red);
+  --primary-dark: var(--teleton-red-dark);
+  --secondary: var(--teleton-blue);
+  --accent: #4299E1;           /* Azul accesible para CTAs */
+  --success: #38A169;          /* Verde para success states */
+  
+  /* Neutrales */
+  --text: #1A202C;
+  --text-light: #4A5568;
+  --background: #FFFFFF;
+  --surface: #F7FAFC;
+  --border: #E2E8F0;
+  
+  /* Gradientes */
+  --hero-gradient: linear-gradient(135deg, var(--teleton-purple) 0%, var(--teleton-blue) 100%);
 }
 
 @layer base {
